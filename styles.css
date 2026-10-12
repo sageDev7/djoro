@@ -146,9 +146,11 @@ p { margin: 0 0 18px; font-size: 1rem; font-weight: 300; line-height: 1.75; }
 
 /* ===== Franja de datos ===== */
 .info-bar { background: var(--ink-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.info-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 18px 36px; padding-top: 22px; padding-bottom: 22px; }
-.info-inner span { font-size: .9rem; letter-spacing: .08em; color: var(--cream); display: inline-flex; align-items: center; gap: 10px; }
-.info-inner i { color: var(--gold); font-size: 1.2rem; }
+.info-inner { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding-top: 26px; padding-bottom: 26px; max-width: 1440px; }
+.info-item { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; }
+.info-item i { color: var(--gold); font-size: 1.3rem; }
+.info-item span { font-size: .9rem; letter-spacing: .08em; color: var(--cream); white-space: nowrap; display: flex; flex-direction: column; gap: 4px; }
+.info-item small { font-size: .72rem; letter-spacing: .03em; color: var(--muted); font-weight: 400; white-space: nowrap; }
 
 /* ===== Sobre ===== */
 .about { padding: var(--section-y) 0; background: radial-gradient(ellipse 55% 60% at 85% 40%, rgba(240,168,48,.12), transparent 70%), var(--ink); }
@@ -258,6 +260,7 @@ p { margin: 0 0 18px; font-size: 1rem; font-weight: 300; line-height: 1.75; }
   .service-row li:nth-child(5) { border-left: none; }
   .about-grid { gap: 56px; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 48px 40px; }
+  .info-inner { grid-template-columns: 1fr 1fr; row-gap: 26px; }
 }
 
 @media (max-width: 768px) {
@@ -274,9 +277,9 @@ p { margin: 0 0 18px; font-size: 1rem; font-weight: 300; line-height: 1.75; }
   .hero-genres { font-size: .58rem; letter-spacing: .2em; }
   .hero-lead { margin-bottom: 22px; }
   .title { font-size: clamp(2rem, 8.6vw, 2.7rem); }
-  .info-inner { flex-direction: column; align-items: center; text-align: center; padding-top: 28px; padding-bottom: 28px; gap: 26px; }
-  .info-inner span { flex-direction: column; gap: 10px; }
-  .info-inner i { font-size: 1.6rem; }
+  .info-inner { grid-template-columns: 1fr; padding-top: 28px; padding-bottom: 28px; gap: 26px; }
+  .info-item i { font-size: 1.6rem; }
+  .info-item span, .info-item small { white-space: normal; }
   .nav-links { display: none; }
 
   .kicker { font-size: 1.2rem; }
